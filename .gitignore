@@ -1,0 +1,36 @@
+# Entorno Virtual
+venv/
+env/
+ENV/
+
+# Python (Archivos compilados y caché)
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Variables de Entorno (SEGURIDAD)
+.env
+
+# Logs del proyecto
+logs/*.log
+*.log
+
+# Docker
+.docker/
+
+# Base de datos local (Solo si se crean archivos sqlite o similares)
+*.db
+*.sqlite
+
+# IDEs y Editores
+.vscode/
+.idea/
+.DS_Store (Mac)
+Thumbs.db (Windows)
+
+# Datos (Opcional: si el dataset es muy pesado, se ignora)
+# data/*.csv
