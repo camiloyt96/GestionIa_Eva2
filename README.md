@@ -1,6 +1,6 @@
-# 🤖 IA de Asesoramiento Financiero Personal
+# 🤖 IA predictiva de Churn para empresa de Telecomunicaciones
 
-> Documento técnico de diseño del sistema — Versión 1.0 · 2026  
+> Documento técnico de diseño del sistema — Versión 2.0 · 2026  
 > **Integrantes:** Galio Soto & Camilo Yañez
 
 ---
@@ -26,15 +26,17 @@
 
 ## Introducción
 
-Este proyecto desarrolla una **IA de asesor financiero personal** capaz de:
+Este proyecto desarrolla un sistema de inteligencia artificial orientado a la prediccion de abandono de clientes(Customer Churn) en una empresa de telecomunicaciones.
 
-- Analizar datos financieros del usuario (ingresos, gastos, transacciones)
-- Generar recomendaciones personalizadas de inversión, ahorro y control de gastos
-- Predecir comportamientos financieros futuros mediante modelos de machine learning
-- Entregar insights accionables a través de una interfaz intuitiva
+El objetivo principal es identificar patrones de comportamiento y variables criticas que permitan anticipar que clientes tienen mayor porabilidad de cancelar sus servicios, facilitando la implementacion de estrategias de retencion personalizadas.
 
-Este documento sirve como base técnica del pipeline de datos y del modelo de recomendación, y debe mantenerse actualizado conforme evolucione el sistema.
-
+El sistema es capaz de:
+Analizar datos demograficos, financieros y servicios contratados de los clientes.
+Procesar y transformar grandes volumenes de datos.
+Detectar patrones asociados al abandono del servicio.
+Generar predicciones de Churn mediante modelos de DeepLearning (Random Forest)
+Entregar insights accionables para areas comerciales y de retencion.
+Exponer resultados mediante una API y Dashboard Interactivo.
 ---
 
 ## Descripción Técnica del Sistema
@@ -43,14 +45,14 @@ Este documento sirve como base técnica del pipeline de datos y del modelo de re
 
 | # | Componente | Descripción |
 |---|-----------|-------------|
-| 1 | **Ingesta de datos** | Scripts para CSV, APIs bancarias e input manual |
-| 2 | **Limpieza y validación** | Normalización y control de calidad de los datos |
-| 3 | **Categorización de gastos** | Modelo ML o reglas de negocio para clasificar transacciones |
-| 4 | **Motor de recomendaciones** | Generación de consejos financieros personalizados |
-| 5 | **Modelo predictivo** | Predicción de ahorro, gasto futuro y riesgo financiero |
-| 6 | **API Backend** | Interfaz de comunicación con el usuario y el frontend |
-| 7 | **Base de datos** | PostgreSQL para almacenamiento persistente |
-| 8 | **Frontend** | Dashboard web/app para visualización |
+| 1 | **Ingesta de datos** | Scripts para procesar CSV  |
+| 2 | **Limpieza y validación** | Normalización y control de calidad de los datos, limpieza de datos nulos e inconsistencias. |
+| 3 | **Transformacion de datos** | Enconding de variables categoricas y feature engineering |
+| 4 | **Analisis exploratorio (EDA)** | Deteccion de Patrones y correlacion relevante |
+| 5 | **Modelo predictivo** | Algoritmo ML para clasificacion de clientes con Churn |
+| 6 | **API Backend** | Servicio para consultar predicciones y resultados a traves de http |
+| 7 | **Base de datos** | PostgreSQL para almacenamiento de datos persistente |
+| 8 | **Frontend** | Dashboard web/app para visualización en React |
 
 ---
 
@@ -191,7 +193,7 @@ python app.py                   # Con Flask
 ## Estructura del Proyecto
 
 ```
-📁 financial-ai-advisor/
+📁 GestionIa_Eva2/
 ├── 📁 data/
 │   ├── raw/                  # Datos crudos (CSV, exports)
 │   └── processed/            # Datos limpios listos para modelar
