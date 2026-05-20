@@ -1,5 +1,5 @@
 ﻿greenlet==3.2.5
-numpy==2.4.4
+numpy==2.0.2
 pandas==3.0.3
 psycopg2-binary==2.9.12
 python-dateutil==2.9.0.post0
